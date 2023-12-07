@@ -8,7 +8,7 @@ export const Navbar = () => {
   return (
     // navbar for organizational page
     <nav className="fixed z-50 top-0 w-full border-b shadow-sm bg-white flex items-center px-4 py-4 ">
-      {/* {need to handle mobile responsiveness latter} */}
+      {/* {need to handle mobile responsiveness sidebar} */}
       <div className="flex items-center gap-x-4">
         <div className=" hidden md:flex ">
           <Logo />
