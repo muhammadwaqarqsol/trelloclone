@@ -1,10 +1,19 @@
 import { OrganizationSwitcher, auth } from "@clerk/nextjs";
 
+"use client";
 const OrganizationIdPage = () => {
-  const { userId, orgId } = auth();
+  console.log("I am run in the browser");
   return (
     <div>
-      Orginzation Page!
+      <form>
+        <input
+          id="title"
+          name="title"
+          placeholder="Enter a Board Name"
+          className="border-black border p-1"
+          required
+        />
+      </form>
       {/* <OrganizationSwitcher hidePersonal /> */}
     </div>
   );
