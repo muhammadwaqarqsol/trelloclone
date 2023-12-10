@@ -1,6 +1,6 @@
 "use server";
 
-import { z } from "zod";
+import { ZodNull, z } from "zod";
 
 import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
@@ -10,7 +10,7 @@ export type State = {
   errors?: {
     title?: string[];
   };
-  message?: string | null;
+  message?: null | string;
 };
 
 const CreateBoard = z.object({
@@ -45,6 +45,6 @@ export async function create(prevState: State, formData: FormData) {
     };
   }
 
-  revalidatePath("/organization/org_2ZDFVBmKlzTvIJSPkZYFnXK7aOz");
-  redirect("/organization/org_2ZDFVBmKlzTvIJSPkZYFnXK7aOz");
+  revalidatePath("/organization/org_2XwLIDt5x0Ay86prfZg7BqrELWR");
+  redirect("/organization/org_2XwLIDt5x0Ay86prfZg7BqrELWR");
 }
