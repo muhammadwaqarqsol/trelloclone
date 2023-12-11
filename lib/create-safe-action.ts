@@ -1,4 +1,4 @@
-import { promise, z } from "zod";
+import { z } from "zod";
 
 export type FieldErrors<T> = {
   [K in keyof T]?: string[];
@@ -10,7 +10,7 @@ export type ActionState<TInput, TOutput> = {
   data?: TOutput;
 };
 
-export const CreateSafeAction = <TInput, TOutput>(
+export const createSafeAction = <TInput, TOutput>(
   schema: z.Schema<TInput>,
   handler: (validatedData: TInput) => Promise<ActionState<TInput, TOutput>>
 ) => {
@@ -22,6 +22,7 @@ export const CreateSafeAction = <TInput, TOutput>(
           .fieldErrors as FieldErrors<TInput>,
       };
     }
+
     return handler(validationResult.data);
   };
 };
